@@ -1,0 +1,8 @@
+{
+  "pkgcloud": {
+    "provider": 'rackspace',
+    "username": 'test',
+    "apiKey": 'xxxxxxxxxxxxxxxxxxxxxxxxxx'
+  },
+  "port": 4444
+}

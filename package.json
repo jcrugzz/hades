@@ -1,0 +1,32 @@
+{
+  "name": "hades",
+  "description": "Upload files using pkgcloud over a websocket connection",
+  "version": "0.0.0",
+  "author": "Jarrett Cruger <jcrugzz@gmail.com>",
+  "repository": {
+    "url": "git://github.com/jcrugzz/hades.git"
+  },
+  "main": "./lib/hades.js",
+  "scripts": {
+    "start": "bin/server",
+    "upload": "bin/uploader",
+    "test": "tape test/*.js"
+  },
+  "bin": {
+    "hades-server": "bin/server",
+    "hades-uploader": "bin/uploader"
+  },
+  "engines": {
+    "node": "0.10.x || 0.8.x"
+  },
+  "dependencies": {
+    "websocket-stream": "~0.2.0",
+    "nconf": "~0.6.7",
+    "ws": "~0.4.27",
+    "pkgcloud": "~0.8.4"
+  },
+  "devDependencies": {
+    "tape": "~1.0.2"
+  },
+  "license": "MIT"
+}
