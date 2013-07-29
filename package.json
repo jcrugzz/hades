@@ -20,10 +20,10 @@
     "node": "0.10.x || 0.8.x"
   },
   "dependencies": {
-    "websocket-stream": "~0.2.0",
     "nconf": "~0.6.7",
     "ws": "~0.4.27",
-    "pkgcloud": "~0.8.4"
+    "pkgcloud": "~0.8.4",
+    "primus": "~1.1.2"
   },
   "devDependencies": {
     "tape": "~1.0.2"
