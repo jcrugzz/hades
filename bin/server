@@ -20,7 +20,7 @@ nconf.file(nconf.get('config'));
 
 if (nconf.get('help')) {
   console.log([
-    'usage: rackspacer [options]\n',
+    'usage: hades [options]\n',
     'options:',
     '  -p, --port   Port to chill on',
     '  -c, --config Config file to use',
