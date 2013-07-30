@@ -1,2 +1,41 @@
 #!/usr/bin/env node
 
+var fs = require('fs');
+var path = require('path');
+
+var nconf = require('nconf');
+var primus = require('primus');
+
+var Socket = primus.createSocket({ parser: 'binary' });
+
+nconf
+  .argv({
+    help:      { alias: 'h' },
+    file:      { alias: 'f' },
+    container: { alias: 'c' }
+  });
+var file = nconf.get('file');
+var container = nconf.get('container');
+
+
+if (nconf.get('help') || !file || !container) {
+  console.log([
+    'usage: hades-uploader [options]\n',
+    'options:',
+    '  -f, --file       File to upload',
+    '  -c, --container  Container to put file in',
+    '  -h, --help       O HAI THERE'
+  ].join('\n') + '\n');
+  process.exit();
+}
+
+var thePath = path.resolve(process.cwd(), file);
+
+var pieces = thePath.split('/');
+var fileName = pieces[pieces.length - 1];
+
+var socket = new Socket('http://localhost:444?container=' + container + '&file=' + fileName);
+
+socket.on('error', console.log);
+
+fs.createReadStream(thePath).pipe(socket);
