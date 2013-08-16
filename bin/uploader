@@ -34,7 +34,7 @@ var thePath = path.resolve(process.cwd(), file);
 var pieces = thePath.split('/');
 var fileName = pieces[pieces.length - 1];
 
-var socket = new Socket('http://localhost:444?container=' + container + '&file=' + fileName);
+var socket = new Socket('http://localhost:4444?container=' + container + '&file=' + fileName);
 
 socket.on('error', console.log);
 
